@@ -27,24 +27,6 @@ If you do now have git, you can download a zip file of the example:
 
 https://github.com/parflow/docker/archive/master.zip
 
-## Building the image
-
-The first step is building a Docker image for running ParFlow.  The
-build script in the bin directory will build the image using the
-latest ParFlow source.
-
-### Unix/Linux/MacOS
-
-```bash
-./bin/build.sh
-```
-
-### Windows
-
-```PowerShell
-.\bin\build.bat
-```
-
 ## Running
 
 Running ParFlow using the Docker instance is similiar to how ParFlow
@@ -65,6 +47,9 @@ For the Docker instance use:
 
 On Windows the script to use is parflow.bat.
 
+The first time you execute the 'parflow.bat' or 'parflow.sh' script
+Docker will download the ParFlow image.  This requires an internet
+connection and may take several minutes.
 
 ### Unix/Linux/MacOS
 
