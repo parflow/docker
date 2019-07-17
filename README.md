@@ -132,6 +132,55 @@ We are looking at how to better manage this issue; this is a known
 
 ## Output
 
-The 
+The output of running the example will be placed in the
+example directory.
 
+Below is a list of files from a run done on windows.  The *.txt and
+*.log files contain summary information about the turn.  The '*.silo'
+and '*.pfb' files are the same output, simply stored in two different
+formats.  The Silo files are viewable using Visit
+(https://wci.llnl.gov/simulation/computer-codes/visit/).  See the
+ParFlow user manual for more information on output.
+
+```
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        7/17/2019   9:19 AM                .git
+d-----        7/17/2019   9:02 AM                bin
+d-----        7/16/2019   3:30 PM                correct_output
+d-----        7/17/2019   9:09 AM                default_single.out
+-a----        7/17/2019   9:11 AM             40 .gitignore
+-a----        7/17/2019   9:19 AM            184 default_single.out.concen.0.00.00000.pfsb
+-a----        7/17/2019   9:19 AM           2765 default_single.out.concen.0.00.00000.silo
+-a----        7/17/2019   9:19 AM            604 default_single.out.concen.0.00.00001.pfsb
+-a----        7/17/2019   9:19 AM           2765 default_single.out.concen.0.00.00001.silo
+-a----        7/17/2019   9:19 AM           1324 default_single.out.concen.0.00.00002.pfsb
+-a----        7/17/2019   9:19 AM           2765 default_single.out.concen.0.00.00002.silo
+-a----        7/17/2019   9:19 AM           1804 default_single.out.concen.0.00.00003.pfsb
+-a----        7/17/2019   9:19 AM           2765 default_single.out.concen.0.00.00003.silo
+-a----        7/17/2019   9:19 AM           2364 default_single.out.concen.0.00.00004.pfsb
+-a----        7/17/2019   9:19 AM           2765 default_single.out.concen.0.00.00004.silo
+-a----        7/17/2019   9:19 AM           2724 default_single.out.concen.0.00.00005.pfsb
+-a----        7/17/2019   9:19 AM           2765 default_single.out.concen.0.00.00005.silo
+-a----        7/17/2019   9:19 AM           2718 default_single.out.concen.press.silo
+-a----        7/17/2019   9:19 AM           5208 default_single.out.log
+-a----        7/17/2019   9:19 AM          17380 default_single.out.perm_x.pfb
+-a----        7/17/2019   9:19 AM           2742 default_single.out.perm_x.silo
+-a----        7/17/2019   9:19 AM          17380 default_single.out.perm_y.pfb
+-a----        7/17/2019   9:19 AM           2742 default_single.out.perm_y.silo
+-a----        7/17/2019   9:19 AM          17380 default_single.out.perm_z.pfb
+-a----        7/17/2019   9:19 AM           2742 default_single.out.perm_z.silo
+-a----        7/17/2019   9:19 AM           7991 default_single.out.pftcl
+-a----        7/17/2019   9:19 AM          17380 default_single.out.porosity.pfb
+-a----        7/17/2019   9:19 AM           2709 default_single.out.porosity.silo
+-a----        7/17/2019   9:19 AM          17380 default_single.out.press.00000.pfb
+-a----        7/17/2019   9:19 AM            713 default_single.out.timing.csv
+-a----        7/17/2019   9:19 AM           4327 default_single.out.txt
+-a----        7/17/2019   9:19 AM           1453 default_single.out.wells
+-a----        7/17/2019   9:19 AM           5598 default_single.pfidb
+-a----        7/17/2019   8:51 AM          13518 default_single.tcl
+-a----        7/17/2019   9:07 AM           1071 Dockerfile
+-a----        7/17/2019   8:51 AM           2972 pftest.tcl
+-a----        7/17/2019   9:19 AM           3229 README.md
+```
 	 
