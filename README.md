@@ -169,3 +169,42 @@ d-----        7/17/2019   9:09 AM                default_single.out
 -a----        7/17/2019   9:19 AM           3229 README.md
 ```
 	 
+## Running your ParFlow problem with Docker
+
+Running your input with the Docker has one restriction using the
+provided script; all input files must be contained in the current
+working directory.  This includes the initial TCL input file and all
+files that are used in the problem.  Subdirectories in the current
+working directory are fine and will be available in the instance.
+Soft links will not work.
+
+Once you have all the files in the current working directory simply invoke
+the script with the TCL file.  For example on Windows:
+
+```PowerShell
+.\bin\parflow.bat my_problem_setup.tcl
+```
+
+It is possible to share other directories with the Docker instance but
+that is beyond the scope of this document.  You will need to bind
+additional directories by changing the Docker command line.  See
+Docker documenation for information on sharing host file systems with
+the Docker instance.
+
+## Running a specific version of ParFlow
+
+By default the supplied script will download and execute the latest
+version of ParFlow.  The released versions of ParFlow are also
+available for ParFlow on DockerHub (starting with version 3.5.0).  To
+run a specific version of ParFlow edit the script to run the desired
+version and change the docker run line:
+
+```PowerShell
+docker run -v %cd%:/data parflow/parflow %1 %2 %3 %4 %5 %6 %7 %8 %9
+```
+
+and indicate the version desired:
+
+```PowerShell
+docker run -v %cd%:/data parflow/parflow:version-version-3.5.0 %1 %2 %3 %4 %5 %6 %7 %8 %9
+```
