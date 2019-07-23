@@ -7,7 +7,7 @@ We have just started supporting Docker so please report issues at the ParFlow is
 ## Install Docker
 
 
-Documentation for downloaing and installing Docker is available at: https://docs.docker.com/
+Documentation for downloading and installing Docker is available at: https://docs.docker.com/
 
 ## Download the ParFlow Docker example repository
 
@@ -30,7 +30,7 @@ https://github.com/parflow/docker/archive/master.zip
 ## Running
 
 Running ParFlow using the Docker instance is similiar to how ParFlow
-is run directly from the command line using TCL.  The tclsh command is
+is run from the command line using TCL.  The tclsh command is
 replaced with a platform specific script.
 
 Where you see:
@@ -39,7 +39,7 @@ Where you see:
 tclsh <arguments>
 ```
 
-For the Docker instance use:
+to run with the the Docker instance use the provided script:
 
 ```bash
 ./bin/parflow.sh <arguments>
@@ -51,7 +51,7 @@ The first time you execute the 'parflow.bat' or 'parflow.sh' script
 Docker will download the ParFlow image.  This requires an internet
 connection and may take several minutes.
 
-### Unix/Linux/MacOS
+### Example on Unix/Linux/MacOS
 
 To execute the default_single test case run with
 
@@ -73,7 +73,7 @@ To run this same problem in parallel:
 Will split the problem in the X axis across two cores.
 
 
-### Windows
+### Example on Windows
 
 To execute the default_single test case run with
 
@@ -107,8 +107,8 @@ problems this will need to be increased.
 
 #### Special file issues on Windows
 
-Windows Docker support currently has issues with files ownership.  The
-files created when running will be owned by the Administrator account.
+Windows Docker support currently has issues with file ownership.  The
+files created when will be owned by the Administrator account.
 The files are readable by you and you can delete files BUT directories
 can only be deleted by an Administrator account.
 
@@ -120,8 +120,8 @@ We are looking at how to better manage this issue; this is a known
 The output of running the example will be placed in the
 example directory.
 
-Below is a list of files from a run done on windows.  The *.txt and
-*.log files contain summary information about the turn.  The '*.silo'
+Below is a list of files from a run done on windows.  The '*.txt' and
+'*.log' files contain summary information about the turn.  The '*.silo'
 and '*.pfb' files are the same output, simply stored in two different
 formats.  The Silo files are viewable using Visit
 (https://wci.llnl.gov/simulation/computer-codes/visit/).  See the
