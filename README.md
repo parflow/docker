@@ -1,8 +1,8 @@
 # Parflow Docker 
 
-This is a setup for running ParFlow under Docker.
+This is basic setup for running ParFlow under Docker.   
 
-This is a work in progress.
+We have just started supporting Docker so please report issues at the ParFlow issue tracker: https://github.com/parflow/parflow/issues
 
 ## Install Docker
 
@@ -206,5 +206,5 @@ docker run -v %cd%:/data parflow/parflow %1 %2 %3 %4 %5 %6 %7 %8 %9
 and indicate the version desired:
 
 ```PowerShell
-docker run -v %cd%:/data parflow/parflow:version-version-3.5.0 %1 %2 %3 %4 %5 %6 %7 %8 %9
+docker run -v %cd%:/data parflow/parflow:version-3.5.0 %1 %2 %3 %4 %5 %6 %7 %8 %9
 ```
