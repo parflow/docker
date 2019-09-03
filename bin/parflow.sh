@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker run -v $(pwd):/data parflow/parflow $*
+docker run --rm -v $(pwd):/data parflow/parflow $*
