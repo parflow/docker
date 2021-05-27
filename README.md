@@ -18,7 +18,7 @@ This example repository has scripts and input for running a simple ParFlow examp
 If you have git installed, you can clone the example:
 
 ```bash
-git clone git@github.com:smithsg84/docker.git
+git clone https://github.com/parflow/docker.git
 ```
 
 ### Download zip file
@@ -71,7 +71,6 @@ To run this same problem in parallel:
 ```
 
 Will split the problem in the X axis across two cores.
-
 
 ### Example on Windows
 
@@ -193,18 +192,18 @@ the Docker instance.
 
 ## Running a specific version of ParFlow
 
-By default the supplied script will download and execute the latest
-version of ParFlow.  The released versions of ParFlow are also
-available for ParFlow on DockerHub (starting with version 3.5.0).  To
-run a specific version of ParFlow edit the script to run the desired
-version and change the docker run line:
+By default the supplied script will download and execute the version
+3.8.0 of ParFlow.  Other released versions of ParFlow are available on
+DockerHub (starting with version 3.5.0 and the latest developer
+build).  To run a specific version of ParFlow edit the script to run
+the desired version and change the docker run line:
 
 ```PowerShell
-docker run -v %cd%:/data parflow/parflow %1 %2 %3 %4 %5 %6 %7 %8 %9
+docker run -v %cd%:/data parflow/parflow:version-3.8.0 %1 %2 %3 %4 %5 %6 %7 %8 %9
 ```
 
-and indicate the version desired:
+Indicate the desired version, here the latest developer version is specified:
 
 ```PowerShell
-docker run -v %cd%:/data parflow/parflow:version-3.5.0 %1 %2 %3 %4 %5 %6 %7 %8 %9
+docker run -v %cd%:/data parflow/parflow:latest %1 %2 %3 %4 %5 %6 %7 %8 %9
 ```
