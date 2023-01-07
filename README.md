@@ -1,15 +1,16 @@
-# Parflow Docker 
+# Parflow Container
 
-This is basic setup for running ParFlow under Docker.   
+This is basic setup for running the ParFlow container image.   Running both 
 
-We have just started supporting Docker so please report issues at the ParFlow issue tracker: https://github.com/parflow/parflow/issues
+Please report issues at the ParFlow issue tracker: https://github.com/parflow/parflow/issues
 
-## Install Docker
+## Install Docker, Podman, or Singularity
 
+The container image should work with any of the popular systems.   Docker is the most popular but Podman and Singularity have also been used to run this image.
 
-Documentation for downloading and installing Docker is available at: https://docs.docker.com/
+Documentation for downloading and installing these container systems is available at: https://docs.docker.com/ , https://podman.io/ and https://sylabs.io/
 
-## Download the ParFlow Docker example repository
+## Download the ParFlow coontainer example repository
 
 This example repository has scripts and input for running a simple ParFlow example under Docker.
 
@@ -27,10 +28,10 @@ If you do now have git, you can download a zip file of the example:
 
 https://github.com/parflow/docker/archive/master.zip
 
-## Running
+## Running a ParFlow input file
 
-Running ParFlow using the Docker instance is similiar to how ParFlow
-is run from the command line using TCL.  The tclsh command is
+Running ParFlow using the container instance is similiar to how ParFlow
+is run from the command line using Python or TCL.  The python/tclsh command is
 replaced with a platform specific script.
 
 Where you see:
@@ -39,7 +40,11 @@ Where you see:
 tclsh <arguments>
 ```
 
-to run with the the Docker instance use the provided script:
+```bash
+python <arguments>
+```
+
+to run with the the container instance use the provided script:
 
 ```bash
 ./bin/parflow.sh <arguments>
@@ -51,9 +56,18 @@ The first time you execute the 'parflow.bat' or 'parflow.sh' script
 Docker will download the ParFlow image.  This requires an internet
 connection and may take several minutes.
 
+The file extension of the ParFlow input (.py or .tcl) will be used to
+determine which script engine to use.
+
 ### Example on Unix/Linux/MacOS
 
-To execute the default_single test case run with
+To execute the default_single Python test case provided with this download:
+
+```bash
+./bin/parflow.sh default_single.py 1 1 1
+```
+
+To execute the TCL default_single TCL test case provided with this download:
 
 ```bash
 ./bin/parflow.sh default_single.tcl 1 1 1
@@ -168,7 +182,7 @@ d-----        7/17/2019   9:09 AM                default_single.out
 -a----        7/17/2019   9:19 AM           3229 README.md
 ```
 	 
-## Running your ParFlow problem with Docker
+## Running your ParFlow problem in a container.
 
 Running your input with the Docker has one restriction using the
 provided script; all input files must be contained in the current
@@ -184,7 +198,7 @@ the script with the TCL file.  For example on Windows:
 .\bin\parflow.bat my_problem_setup.tcl
 ```
 
-It is possible to share other directories with the Docker instance but
+It is possible to share other directories with the cointainer instance but
 that is beyond the scope of this document.  You will need to bind
 additional directories by changing the Docker command line.  See
 Docker documenation for information on sharing host file systems with
@@ -192,18 +206,13 @@ the Docker instance.
 
 ## Running a specific version of ParFlow
 
-By default the supplied script will download and execute the version
-3.8.0 of ParFlow.  Other released versions of ParFlow are available on
-DockerHub (starting with version 3.5.0 and the latest developer
-build).  To run a specific version of ParFlow edit the script to run
-the desired version and change the docker run line:
+By default the supplied script will download and execute the latest
+version ParFlow.  Other released versions of ParFlow are available on
+DockerHub (starting with version 3.5.0).  To run a specific version of
+ParFlow edit the script to change the version to match your desired
+version, for example to run version 3.12.0:
 
 ```PowerShell
-docker run -v %cd%:/data parflow/parflow:version-3.8.0 %1 %2 %3 %4 %5 %6 %7 %8 %9
+docker run -v %cd%:/data parflow/parflow:version-3.12.0 %1 %2 %3 %4 %5 %6 %7 %8 %9
 ```
 
-Indicate the desired version, here the latest developer version is specified:
-
-```PowerShell
-docker run -v %cd%:/data parflow/parflow:latest %1 %2 %3 %4 %5 %6 %7 %8 %9
-```

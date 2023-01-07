@@ -1,11 +1,14 @@
 #!/bin/bash
 
-if docker ps >& /dev/null
+if podman --version >& /dev/null
 then
-   docker run --rm -v $(pwd):/data parflow/parflow:version-3.11.0 $*
+   podman run --rm -v $(pwd):/data docker.io/parflow/parflow:latest $*
+elif docker ps >& /dev/null
+then
+   docker run --rm -v $(pwd):/data parflow/parflow:latest $*
 elif singularity version >& /dev/null
 then
-   singularity run docker://parflow/parflow:version-3.11.0 $*
+   singularity run docker://parflow/parflow:latest $*
 else
-   echo "Couldn't run docker or singularity"
+   echo "Couldn't run podman, docker or singularity"
 fi

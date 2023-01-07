@@ -4,3 +4,5 @@ default:
 
 clean:
 	rm -f default_single.out.*
+	rm -fr default_single.out
+	rm -f default_single.pfidb
